@@ -20,6 +20,4 @@ const BookList = ({ libri }) => (
 
 export default BookList;
 
-// [EXTRA] Inserisci all'interno del componente BookList un campo di ricerca, prima della griglia di libri; se riempito,
-// dovranno venire mostrati solamente i libri il cui titolo contiene il valore cercato
-//  (suggerimento: salva la stringa di ricerca dentro allo stato del componente BookList e filtra i libri di conseguenza).
+// [EXTRA] Inserisci all'interno del componente BookList un campo di ricerca, prima della griglia di libri; se riempito, dovranno venire mostrati solamente i libri il cui titolo contiene il valore cercato (suggerimento: salva la stringa di ricerca dentro allo stato del componente BookList e filtra i libri di conseguenza).
