@@ -5,6 +5,7 @@ import MyFooter from "./MyFooter";
 import Welcome from "./welcome";
 import BookList from "./BookList";
 import { Container } from "react-bootstrap";
+import horrorBooks from "./data/horror.json";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
       <Welcome />
       <Container className="py-4 g-2">
         <h1>Libri Horror</h1>
-        <BookList />
+        <BookList libri={horrorBooks} />
       </Container>
 
       <MyFooter />

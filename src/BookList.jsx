@@ -1,18 +1,18 @@
 import { Row, Col } from "react-bootstrap";
-import libriHorror from "../data/horror.json";
-import BookCard from "./BookCard";
 
-const BookList = () => (
+import SingleBook from "./SingleBook";
+
+const BookList = ({ libri }) => (
   <Row className="justify-content-center g-2">
-    {libriHorror.map((libro) => (
+    {libri.map((l) => (
       <Col
-        key={libro.asin}
+        key={l.asin}
         xs={12}
         md={4}
         lg={3}
         className="d-flex justify-content-center"
       >
-        <BookCard libro={libro} />
+        <SingleBook libro={l} />
       </Col>
     ))}
   </Row>
