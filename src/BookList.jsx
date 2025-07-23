@@ -1,23 +1,51 @@
-import { Row, Col } from "react-bootstrap";
-
+import { Component } from "react";
+import { Row, Col, Form } from "react-bootstrap";
 import SingleBook from "./SingleBook";
 
-const BookList = ({ libri }) => (
-  <Row className="justify-content-center g-2">
-    {libri.map((l) => (
-      <Col
-        key={l.asin}
-        xs={12}
-        md={4}
-        lg={3}
-        className="d-flex justify-content-center"
-      >
-        <SingleBook libro={l} />
-      </Col>
-    ))}
-  </Row>
-);
+class BookList extends Component {
+  state = {
+    searchBook: "",
+  };
+
+  render() {
+    const { libri } = this.props;
+    const { searchBook } = this.state;
+
+    const libriFiltrati = libri.filter((b) =>
+      b.title.toLowerCase().includes(searchBook.toLowerCase())
+    );
+
+    return (
+      <>
+        <Row className="justify-content-center g-2 mb-4">
+          <Col xs={12} md={6} lg={4}>
+            <Form.Group controlId="searchBook">
+              <Form.Control
+                type="search"
+                placeholder="Cerca un libro..."
+                value={searchBook}
+                onChange={(e) => this.setState({ searchBook: e.target.value })}
+              />
+            </Form.Group>
+          </Col>
+        </Row>
+
+        <Row className="justify-content-center g-2">
+          {libriFiltrati.map((l) => (
+            <Col
+              key={l.asin}
+              xs={12}
+              md={4}
+              lg={3}
+              className="d-flex justify-content-center"
+            >
+              <SingleBook libro={l} />
+            </Col>
+          ))}
+        </Row>
+      </>
+    );
+  }
+}
 
 export default BookList;
-
-// [EXTRA] Inserisci all'interno del componente BookList un campo di ricerca, prima della griglia di libri; se riempito, dovranno venire mostrati solamente i libri il cui titolo contiene il valore cercato (suggerimento: salva la stringa di ricerca dentro allo stato del componente BookList e filtra i libri di conseguenza).
