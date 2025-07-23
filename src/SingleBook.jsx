@@ -15,8 +15,16 @@ class SingleBook extends Component {
   // Sto praticamente dicendo che a ogni chiamata del toogleSelect lo stato passerà da false a true.
 
   render() {
+    // Queste due righe fanno uso della destructuring assignment per “estra­rre” valori dagli oggetti this.props e this.state e assegnarli a variabili locali con lo stesso nome delle proprietà.
     const { libro } = this.props;
+
     const { selected } = this.state;
+
+    // this.props è l’oggetto che contiene tutte le proprietà passate al componente.
+
+    // Scrivendo { libro } dico a JavaScript: “Prendi dal mio oggetto this.props la proprietà chiamata libro e assegnala a una variabile locale di nome libro.”
+
+    // A questo punto posso usare semplicemente libro nel render() (o altrove), anziché scrivere ogni volta this.props.libro.
 
     return (
       <Card
