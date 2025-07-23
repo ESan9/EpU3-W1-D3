@@ -5,9 +5,15 @@ class SingleBook extends Component {
   state = {
     selected: false,
   };
+  // Definisco un metodo legato all’istanza che verrà eseguito quando lo invoco (Ex via onClick).
   toggleSelect = () => {
     this.setState(({ selected }) => ({ selected: !selected }));
+    // La funzione passata a setState riceve lo stato precedente (qui destrutturato subito in { selected }).
+
+    // Ritorna un oggetto con la proprietà selected invertita (!selected).
   };
+  // Sto praticamente dicendo che a ogni chiamata del toogleSelect lo stato passerà da false a true.
+
   render() {
     const { libro } = this.props;
     const { selected } = this.state;
