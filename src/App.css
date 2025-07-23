@@ -1,0 +1,5 @@
+.book-cover {
+  width: 100%; /* full width del Card */
+  height: 350px; /* altezza fissa a piacere */
+  object-fit: fill; /* ritaglia la copertina senza deformarla */
+}

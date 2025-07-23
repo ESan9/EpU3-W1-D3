@@ -5,7 +5,7 @@ import MyFooter from "./MyFooter";
 import Welcome from "./welcome";
 import BookList from "./BookList";
 import { Container } from "react-bootstrap";
-import horrorBooks from "./data/horror.json";
+import horrorBooks from "..//data/horror.json";
 
 function App() {
   return (
